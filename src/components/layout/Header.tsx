@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { generatePath, Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/auth-context";
 import NavbarLink from "../routing/NavbarLink";
 
@@ -16,7 +16,7 @@ export default function Header() {
             <NavbarLink to="/">Home</NavbarLink>
             <NavbarLink to="/editor"><i className="ion-compose"></i>&nbsp;New Article</NavbarLink>
             <NavbarLink to="/settings"><i className="ion-gear-a"></i>&nbsp;Settings</NavbarLink>
-            <NavbarLink to="/profile">My Profile</NavbarLink>
+            <NavbarLink to={generatePath('/profile/:username', { username: user.username })}><img className="user-pic" src={user.image} />{user.username}</NavbarLink>
         </ul>
     }
 

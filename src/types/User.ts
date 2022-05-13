@@ -1,6 +1,6 @@
-import { LoginUser } from "./LoginUser";
-
-export interface User extends LoginUser {
+export interface User {
+    email: string;
+    username: string;
     bio: string;
     token: string;
     image: string;

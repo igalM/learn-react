@@ -3,4 +3,7 @@ const storage = {
     setToken: (token: string) => localStorage.setItem("token", token),
     clearToken: () => localStorage.removeItem("token")
 };
-export { storage };
+
+const withJWTHeaders = (token: string) => ({ Authorization: `Bearer ${token}` });
+
+export { storage, withJWTHeaders };
